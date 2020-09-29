@@ -8,6 +8,8 @@ public class CharacterMover : MonoBehaviour
     public float speed = 10.0f;
     public float xRange = 10f;
 
+    public GameObject projectilePrefab;
+
 
     
     void Update()
@@ -21,6 +23,12 @@ public class CharacterMover : MonoBehaviour
         if (transform.position.x > xRange)
         {
             transform.position=new Vector3(xRange,transform.position.y,transform.position.z);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //Launch a Projectile from the Player
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
     }
 }
