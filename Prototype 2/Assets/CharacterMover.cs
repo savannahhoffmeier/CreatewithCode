@@ -5,14 +5,22 @@ using UnityEngine;
 public class CharacterMover : MonoBehaviour
 {
     public float horizontalInput;
-    void Start()
-    {
-        
-    }
+    public float speed = 10.0f;
+    public float xRange = 10f;
+
 
     
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+        if (transform.position.x < -xRange)
+        {
+            transform.position=new Vector3(-xRange,transform.position.y,transform.position.z);
+        }
+        if (transform.position.x > xRange)
+        {
+            transform.position=new Vector3(xRange,transform.position.y,transform.position.z);
+        }
     }
 }
