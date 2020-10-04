@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Assets\CharacterMover.cs" />
     <Compile Include="Assets\DestroyoutofBounds.cs" />
+    <Compile Include="Assets\DetectCollisions.cs" />
     <Compile Include="Assets\MoveForward.cs" />
     <Compile Include="Assets\SpawnManager.cs" />
     <None Include="Assets\Course Library\_Source_Files\_LICENSE.txt" />
